@@ -1,0 +1,23 @@
+/*Estilos para el menú superior o navegador del sitio*/
+header {
+    background-color: #FC2C3C;
+    margin-bottom: 50px;
+}
+
+.navbar-brand {
+    padding: 0px;
+}
+
+.menuLogo {
+    width: 230px;
+    height: auto;
+    vertical-align: middle;
+}
+
+.navbar {
+    padding: 0px;
+}
+
+#dropdownPrestamos {
+    background-color: #FC2C3C !important;
+}
