@@ -1,5 +1,5 @@
 /*Estilos para el menú superior o navegador del sitio*/
-header {
+.App-header {
     background-color: #FC2C3C;
     margin-bottom: 50px;
 }

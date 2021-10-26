@@ -14,14 +14,15 @@ const NavBar = ()=>{
                     </button>
                     <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
                         <ul className="navbar-nav row text-center" style={{width: "50%"}}>
+                            {/*De momento todos los links llevan a index*/}
                             <li className="nav-item col-4">
-                                <a className="nav-link text-black" href="simulator.html">Simulador</a>
+                                <a className="nav-link text-black" href="index.html">Simulador</a>
                             </li>
                             <li className="nav-item col-4">
-                                <a className="nav-link text-black" href="loans.html">Préstamos</a>
+                                <a className="nav-link text-black" href="index.html">Préstamos</a>
                             </li>
                             <li className="nav-item col-4">
-                                <a className="nav-link text-black" href="applicants.html">Solicitantes</a>
+                                <a className="nav-link text-black" href="index.html">Solicitantes</a>
                             </li>
                         </ul>
                     </div>
