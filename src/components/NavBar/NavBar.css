@@ -1,6 +1,7 @@
 /*Estilos para el menú superior o navegador del sitio*/
 .App-header {
-    background-color: #FC2C3C;
+    background-color: #FFC20E;
+    border-bottom: solid 3px #A5ACAF;
     margin-bottom: 50px;
 }
 
@@ -19,5 +20,5 @@
 }
 
 #dropdownPrestamos {
-    background-color: #FC2C3C !important;
+    background-color: #FFC20E !important;
 }

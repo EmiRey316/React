@@ -8,7 +8,7 @@ function App() {
 
       <NavBar />
 
-      <ItemListContainer message="Este es el ItemListContainer"/>
+      <ItemListContainer message="Productos de Pittsburgh Steelers"/>
 
     </div>
   );

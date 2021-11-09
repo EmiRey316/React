@@ -6,7 +6,7 @@ const ItemCount = ({productName, initial, stock})=>{
 
     //Función para cambiar la clase de un botón dependiendo si se cumple o no la condición.
     const activeValidation = (condition) => {
-        return condition ? "col-2 btn btn-outline-danger disabled": "col-2 btn btn-outline-danger";
+        return condition ? "col-2 btn btn-outline-secondary disabled": "col-2 btn btn-outline-dark";
     }
 
     //Funciónque desata la alerta con la cantidad de productos agregados.
@@ -15,8 +15,8 @@ const ItemCount = ({productName, initial, stock})=>{
     }
 
     return (
-        <div className="container" style={{display:"flex", justifyContent:"center"}}>
-            <div className="row justify-content-center border border-danger rounded p-3" style={{width:"25%"}}>
+        <div className="container" style={{display:"flex", justifyContent:"center", marginBottom: 15}}>
+            <div className="row justify-content-center border border-dark rounded p-3" style={{width:"25%"}}>
                 <div id="productNameContainer">
                     <h3>{productName}</h3>
                     <p>Stock = {stock}</p>
