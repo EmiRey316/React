@@ -9,9 +9,17 @@ let productList = [
 ];
 
 const getFetch = new Promise((resolve, reject)=>{
-    setTimeout(()=>{
-        resolve(productList);
-    }, 2000)
+    const condition = true;
+
+    if(condition) {
+        setTimeout(()=>{
+            resolve(productList);
+        }, 2000)
+    } else {
+        setTimeout(()=>{
+            reject("404: Página no encontrada");
+        }, 4000)
+    }
 })
 
 const ItemList = ()=>{
@@ -26,6 +34,7 @@ const ItemList = ()=>{
 
         })
     }, [])
+
 
     return <div id="itemListContainer">
         {itemList.map(item => <Item productName={item.name} imgLink={item.image} price={"USD " + item.price} key={item.id}/>)}

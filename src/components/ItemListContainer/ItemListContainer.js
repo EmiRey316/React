@@ -1,4 +1,5 @@
 import ItemCount from "../Cart/ItemCount";
+import ItemDetailContainer from "../ItemDetail/ItemDetailContainer";
 import ItemList from "./ItemList";
 
 const ItemListContainer = ({message})=>{
@@ -9,6 +10,8 @@ const ItemListContainer = ({message})=>{
             <ItemList />
 
             <ItemCount productName="Producto" initial={0} stock={5}/>
+
+            <ItemDetailContainer />
             
         </div>
     );

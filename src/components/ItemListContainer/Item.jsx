@@ -12,7 +12,7 @@ const Item = ({productName, imgLink, price})=>{
         </div>
         <div id="itemDescriptionContainer" className="card-footer">
             <p>{price}</p>
-            <button className="btn btn-secondary">Detalles</button>
+            <button className="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#detailsModal">Detalles</button>
         </div>
     </div>
 }
