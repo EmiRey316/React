@@ -29,7 +29,7 @@ const getItem = new Promise((resolve, reject)=>{
 
 
 const ItemDetailContainer = ()=>{
-    const [item, setItem] = useState();
+    const [item, setItem] = useState({});
 
     useEffect(()=>{
         getItem.then(resolve => {
