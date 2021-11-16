@@ -3,7 +3,6 @@ import ItemCount from "./ItemCount.jsx";
 
 
 const ItemDetail = ({product})=>{
-    console.log(product);
     return <div id="itemDetailContainer">
         <div id="itemDetailImgContainer">
             <img id="itemDetailImage" src={product.image} alt={product.imageDescription} />

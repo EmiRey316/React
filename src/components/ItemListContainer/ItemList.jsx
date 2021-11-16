@@ -9,7 +9,7 @@ import "./Items.css";
 
 const ItemList = ({productsList})=>{
     const [itemList, setItemList] = useState([]);
-    const { id } = useParams();
+    const { categoryId } = useParams();
 
 
     const getFetch = new Promise((resolve, reject)=>{
@@ -25,14 +25,13 @@ const ItemList = ({productsList})=>{
             }, 4000)
         }
     })
-    console.log(itemList)
 
 
     useEffect(()=>{
 
-        if (id) {
+        if (categoryId) {
             getFetch.then(resolve => {
-                setItemList(resolve.filter(item => item.category === id));
+                setItemList(resolve.filter(item => item.category === categoryId));
             })
             .catch(error => {
                 console.log(error);
@@ -46,7 +45,7 @@ const ItemList = ({productsList})=>{
             })
         }
 
-    }, [id])
+    }, [categoryId])
 
 
     return <div id="itemListContainer">

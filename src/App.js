@@ -24,7 +24,7 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="/" element={<ItemListContainer message="Este es un mensaje de ItemListContainer" productsList={productsList}/>} />
-        <Route path="/category/:id" element={<ItemListContainer message="Este es un mensaje de ItemListContainer" productsList={productsList}/>} />
+        <Route path="/category/:categoryId" element={<ItemListContainer message="Este es un mensaje de ItemListContainer" productsList={productsList}/>} />
         <Route path="/item/:id" element={<ItemDetailContainer productsList={productsList}/>} />
       </Routes>
       <Footer />
