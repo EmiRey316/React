@@ -1,4 +1,6 @@
 import "./ItemDetail.css";
+import ItemCount from "./ItemCount.jsx";
+
 
 const ItemDetail = ({product})=>{
     console.log(product);
@@ -9,9 +11,10 @@ const ItemDetail = ({product})=>{
         <div id="itemDetails">
             <h2>{product.name}</h2>
             <p>{product.category}</p>
-            <p>{"Color: " + product.color}</p>
-            <p>{"Stock: " + product.stock}</p>
+            <p>{"Color primario: " + product.color}</p>
+            <p>{product.stock === 0 ? "Stock: Sin stock": "Stock: " + product.stock}</p>
             <p>{"Precio: USD " + product.price}</p>
+            <ItemCount initial={0} stock={product.stock}/>
         </div>
     </div>
 }

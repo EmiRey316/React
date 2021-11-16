@@ -1,7 +1,9 @@
+import {Link} from 'react-router-dom';
+
 import "./Items.css";
 
 
-const Item = ({productName, imgLink, price})=>{
+const Item = ({productId, productName, imgLink, price})=>{
 
     return <div id="itemContainer" className="border border-dark rounded card text-center">
         <div id="itemTitleContainer" className="card-header">
@@ -12,7 +14,9 @@ const Item = ({productName, imgLink, price})=>{
         </div>
         <div id="itemDescriptionContainer" className="card-footer">
             <p>{price}</p>
-            <button className="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#detailsModal">Detalles</button>
+            <Link to={"/item/" + productId}>
+                <button className="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#detailsModal">Detalles</button>
+            </Link>
         </div>
     </div>
 }
