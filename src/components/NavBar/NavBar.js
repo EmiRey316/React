@@ -2,7 +2,6 @@ import {Link} from 'react-router-dom';
 
 import logo from '../../multimedia/logo.png';
 import CartWidget from '../Cart/CartWidget';
-import CartModal from '../Cart/CartModal';
 
 import './NavBar.css';
 
@@ -37,14 +36,14 @@ const NavBar = ()=>{
                                 <a className="nav-link text-black">Compras</a>
                             </li>
                             <li className="nav-item col-2">
-                                <CartWidget />
+                                <Link to="/cart">
+                                    <CartWidget />
+                                </Link>
                             </li>
                         </ul>
                     </div>
                 </div>
             </nav>
-
-            <CartModal modalID="cartModal" />
         </header>
     );
 }

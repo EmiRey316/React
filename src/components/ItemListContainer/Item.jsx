@@ -15,7 +15,7 @@ const Item = ({productId, productName, imgLink, price})=>{
         <div id="itemDescriptionContainer" className="card-footer">
             <p>{price}</p>
             <Link to={"/item/" + productId}>
-                <button className="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#detailsModal">Detalles</button>
+                <button className="btn btn-secondary">Detalles</button>
             </Link>
         </div>
     </div>

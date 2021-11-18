@@ -1,13 +1,15 @@
-import { BrowserRouter, Routes, Route} from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
 import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetail/ItemDetailContainer';
+import Cart from './components/Cart/Cart';
 import Footer from './components/Footer/Footer';
 
 import './App.css';
 
 
-{/*Lista de productos fija */}
+//Lista de productos fija
 let productsList = [
     {id: 1, name: "Jersey negra", category: "Jerseys", color: "Negro", stock: 15, price: 120, image: "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_2772000/altimages/ff_2772188alt1_full.jpg&w=900", imageDescription: "Jersey de Steelers color negra"},
     {id: 2, name: "Jersey blanca", category: "Jerseys", color: "Blanco", stock: 5, price: 120, image: "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_2906000/altimages/ff_2906880alt1_full.jpg&w=900", imageDescription: "Jersey de Steelers color blanca"},
@@ -23,9 +25,10 @@ function App() {
     <BrowserRouter className="App">
       <NavBar />
       <Routes>
-        <Route path="/" element={<ItemListContainer message="Este es un mensaje de ItemListContainer" productsList={productsList}/>} />
-        <Route path="/category/:categoryId" element={<ItemListContainer message="Este es un mensaje de ItemListContainer" productsList={productsList}/>} />
+        <Route path="/" element={<ItemListContainer message="Listado de productos" productsList={productsList}/>} />
+        <Route path="/category/:categoryId" element={<ItemListContainer message="Listado de productos" productsList={productsList}/>} />
         <Route path="/item/:id" element={<ItemDetailContainer productsList={productsList}/>} />
+        <Route path="/cart" element={<Cart />} />
       </Routes>
       <Footer />
     </BrowserRouter>

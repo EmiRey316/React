@@ -4,6 +4,7 @@ footer {
     font-family: 'Roboto', sans-serif;
     margin-top: 50px;
     padding-top: 20px;
+    justify-self: end;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto 30px;

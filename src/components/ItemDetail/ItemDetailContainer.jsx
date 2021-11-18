@@ -35,6 +35,7 @@ const ItemDetailContainer = ({productsList})=>{
     }, [])
 
     
+    
     return <div className="container">
         <ItemDetail product={item}/>
     </div>
