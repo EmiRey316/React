@@ -1,5 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import {useParams} from 'react-router-dom';
+import { itemListContext } from "../../context/itemListContext";
 
 import Item from "./Item";
 
@@ -7,9 +8,10 @@ import "./Items.css";
 
 
 
-const ItemList = ({productsList})=>{
+const ItemList = ()=>{
     const [itemList, setItemList] = useState([]);
     const { categoryId } = useParams();
+    const productsList = useContext(itemListContext);
 
 
     const getFetch = new Promise((resolve, reject)=>{

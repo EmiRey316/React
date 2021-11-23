@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
+import { cartContext } from "../../context/cartContext.js";
 
 import ItemCount from "./ItemCount.jsx";
 
@@ -10,12 +11,14 @@ const ItemDetail = ({product})=>{
     //Estado que verifica cual será el botón o componente a mostrar.
     const [onAddClicked, setOnAddClicked] = useState(false);
 
+    const { addToCart } = useContext(cartContext)
+
     //Función que se ejecutará al desatar el evento onClick del botón "Agregar al carrito" del ItemCount.
     const handleAdd = (quantityToAdd) => {
         console.log("Se suman " + quantityToAdd + " unidades al carrito.");
         setOnAddClicked(true);
+        addToCart(product, quantityToAdd)
     }
-
 
     return <div id="itemDetailContainer">
         <div id="itemDetailImgContainer">

@@ -1,0 +1,21 @@
+#cartTable {
+    overflow: hidden;
+}
+
+#cartTable div {
+    height: 100px;
+    padding: 8px;
+}
+
+#cartTable img {
+    height: 100%;
+    width: auto;
+}
+
+#cartTableHead {
+    background-color: #FFC20E;
+}
+
+#cartTableBody td {
+    padding: 0px;
+}

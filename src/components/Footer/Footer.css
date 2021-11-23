@@ -26,18 +26,18 @@ footer p {
     grid-area: Copy;
 }
 
-.footerContactos {
+.footerContacts {
     grid-area: Contactos;
     width: 100%;
 }
 
 /*Clase para dar estilo al listado de contactos*/
-.contactosListado {
+.contactList {
     font-style: italic;
     padding-left: 18vw;
 }
 
-.footerRedes {
+.footerSocialNetworks {
     grid-area: Redes;
     width: 100%;
     display: flex;
@@ -46,13 +46,13 @@ footer p {
     align-items: center;
 }
 
-.footerRedesIconos {
+.footerSocialNetworksIcons {
     display: flex;
     width: 80%;
     justify-content: space-evenly;
 }
 
-.footerRedesImg {
+.footerSocialNetworksImg {
     width: 36px;
     height: auto;
 }
@@ -65,13 +65,13 @@ footer p {
         align-items: center;
     }
 
-    .footerContactos, .footerRedes, p {
+    .footerContacts, .footerSocialNetworks, p {
         width: 80%;
         text-align: center;
         padding-bottom: 20px;
     }
 
-    .contactosListado {
+    .contactList {
         padding-left: 0px !important;
     }
 }

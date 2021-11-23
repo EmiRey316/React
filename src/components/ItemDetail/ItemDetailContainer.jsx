@@ -1,21 +1,22 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { useParams } from 'react-router-dom';
+import { itemListContext } from "../../context/itemListContext";
 
 import ItemDetail from "./ItemDetail";
 
 
 
-const ItemDetailContainer = ({productsList})=>{
+const ItemDetailContainer = ()=>{
     const [item, setItem] = useState({});
     const { id } = useParams();
-
+    const itemList = useContext(itemListContext);
 
     const getItem = new Promise((resolve, reject)=>{
         const condition = true;
 
         if(condition) {
             setTimeout(()=>{
-                resolve(productsList);
+                resolve(itemList);
             }, 2000)
         } else {
             setTimeout(()=>{
