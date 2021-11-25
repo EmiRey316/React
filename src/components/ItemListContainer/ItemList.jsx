@@ -1,7 +1,8 @@
 import { useState, useEffect, useContext } from "react";
 import {useParams} from 'react-router-dom';
-import { itemListContext } from "../../context/itemListContext";
 
+import { itemListContext } from "../../context/itemListContext";
+import Loader from "../BasicComponents/Loader";
 import Item from "./Item";
 
 import "./Items.css";
@@ -10,6 +11,7 @@ import "./Items.css";
 
 const ItemList = ()=>{
     const [itemList, setItemList] = useState([]);
+    const [loading, setLoading] = useState(true);
     const { categoryId } = useParams();
     const productsList = useContext(itemListContext);
 
@@ -38,6 +40,7 @@ const ItemList = ()=>{
             .catch(error => {
                 console.log(error);
             })
+            .finally(()=>setLoading(false))
         } else {
             getFetch.then(resolve => {
                 setItemList(resolve);
@@ -45,14 +48,28 @@ const ItemList = ()=>{
             .catch(error => {
                 console.log(error);
             })
+            .finally(()=>setLoading(false))
         }
 
     }, [categoryId])
 
 
-    return <div id="itemListContainer">
-        {itemList.map(item => <Item productId={item.id} productName={item.name} imgLink={item.image} price={"USD " + item.price} key={item.id}/>)}
+    return <div>
+        {loading ?
+            <Loader />
+        :
+            <div id="itemListContainer">
+                {itemList.map(item => <Item
+                    productId={item.id}
+                    productName={item.name}
+                    imgLink={item.image}
+                    price={"USD " + item.price}
+                    key={item.id}
+                />)}
+            </div>
+        }
     </div>
+    
 }
 
 export default ItemList;

@@ -13,7 +13,10 @@ const CartContextProvider = ({children})=>{
     //Función que agrega el item indicado al carrito.
     const addToCart = (item, amount) => {
         if (isInCart(item)) {
-            alert("El artículo ya se encuentra incluido en el carrito")
+            let position = cartList.findIndex(e => e.id === item.id);
+            let newCartList = cartList;
+            newCartList[position].amount += amount;
+            setCartList(newCartList);
         } else {
             setCartList([...cartList, {...item, amount}]);
         }

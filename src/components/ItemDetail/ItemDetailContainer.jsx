@@ -1,6 +1,7 @@
 import { useState, useEffect, useContext } from "react";
 import { useParams } from 'react-router-dom';
 import { itemListContext } from "../../context/itemListContext";
+import Loader from "../BasicComponents/Loader";
 
 import ItemDetail from "./ItemDetail";
 
@@ -8,6 +9,7 @@ import ItemDetail from "./ItemDetail";
 
 const ItemDetailContainer = ()=>{
     const [item, setItem] = useState({});
+    const [loading, setLoading] = useState(true);
     const { id } = useParams();
     const itemList = useContext(itemListContext);
 
@@ -33,12 +35,13 @@ const ItemDetailContainer = ()=>{
         .catch(error => {
             console.log(error);
         })
+        .finally(()=>setLoading(false))
     }, [])
 
     
     
     return <div className="container">
-        <ItemDetail product={item}/>
+        {loading ? <Loader />:<ItemDetail product={item}/>}
     </div>
 }
 
