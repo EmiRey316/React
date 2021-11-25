@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect, useContext, memo } from "react";
 import {useParams} from 'react-router-dom';
 
 import { itemListContext } from "../../context/itemListContext";
@@ -9,7 +9,7 @@ import "./Items.css";
 
 
 
-const ItemList = ()=>{
+const ItemList = memo(()=>{
     const [itemList, setItemList] = useState([]);
     const [loading, setLoading] = useState(true);
     const { categoryId } = useParams();
@@ -70,6 +70,6 @@ const ItemList = ()=>{
         }
     </div>
     
-}
+})
 
 export default ItemList;

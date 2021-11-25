@@ -1,14 +1,16 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 
 export const cartContext = createContext([]);
 
 const CartContextProvider = ({children})=>{
     const [cartList, setCartList] = useState([])
 
+
     //Función para identificar si un artículo ya se encuentra incluido en el carrito.
     const isInCart = (item) => {
         return cartList.some(product => product.id === item.id)
     }
+
 
     //Función que agrega el item indicado al carrito.
     const addToCart = (item, amount) => {
@@ -22,11 +24,14 @@ const CartContextProvider = ({children})=>{
         }
     }
 
+
+
     //Función un artículo concreto del carrito.
     const deleteItem = (itemId) => {
-        let position = cartList.findIndex(item => item.id === itemId);
-        console.log(position)
+        const newCartList = cartList.filter((item) => item.id !== itemId);
+        setCartList(newCartList);
     }
+
 
     //Función para limpiar todo el listado de items del carrito.
     const clearCart = ()=>{
