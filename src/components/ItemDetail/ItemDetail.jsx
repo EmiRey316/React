@@ -13,6 +13,7 @@ const ItemDetail = ({product})=>{
 
     const { addToCart } = useContext(cartContext)
 
+
     //Función que se ejecutará al desatar el evento onClick del botón "Agregar al carrito" del ItemCount.
     const handleAdd = (quantityToAdd) => {
         console.log("Se suman " + quantityToAdd + " unidades al carrito.");
@@ -20,9 +21,10 @@ const ItemDetail = ({product})=>{
         addToCart(product, quantityToAdd)
     }
 
+
     return <div id="itemDetailContainer">
         <div id="itemDetailImgContainer">
-            <img id="itemDetailImage" src={product.image} alt={product.imageDescription} />
+            <img id="itemDetailImage" src={product.imageUrl} alt={product.description} />
         </div>
 
         <div id="itemDetails">

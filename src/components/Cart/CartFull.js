@@ -25,7 +25,7 @@ const CartFull = ()=>{
 
         {/*Contenedor con la tabla que muestra el listado de productos en el carrito*/}
         <div className="table-responsive container-fluid">
-            <table id="cartTable" className="table text-center table-hover">
+            <table id="cartTable" className="table text-center table-hover align-middle">
                 <thead id="cartTableHead">
                     <tr>
                         <th scope="col">Cantidad</th>
@@ -40,8 +40,8 @@ const CartFull = ()=>{
 
                     {cartList.map(item => <tr key={"item" + item.id + "row"}>
                         <td><div>{item.amount}</div></td>
-                        <td><div><img src={item.image} alt={item.imageDescription}></img></div></td>
-                        <td><div>{item.name}</div></td>
+                        <td><div><img src={item.imageUrl} alt={item.description} className="productImg"></img></div></td>
+                        <td><div className="align-middle">{item.name}</div></td>
                         <td><div>{item.price * item.amount}</div></td>
                         <td><div className="buttonsCell">
                             <button className="btn btn-danger" onClick={()=>deleteItem(item.id)}>
@@ -54,11 +54,11 @@ const CartFull = ()=>{
                     <tr>
                         <td></td>
                         <td></td>
-                        <td><div>Total a Pagar</div></td>
-                        <td>{totalPayment}</td>
-                        <td>
+                        <td><div><strong>Total a Pagar</strong></div></td>
+                        <td><div><strong>{totalPayment}</strong></div></td>
+                        <td><div className="buttonsCell">
                             <button type="button" className="btn btn-success">Pagar</button>
-                        </td>
+                        </div></td>
                     </tr>
 
                 </tbody>

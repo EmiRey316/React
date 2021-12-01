@@ -3,12 +3,11 @@
 }
 
 #cartTable div {
-    height: 100px;
     padding: 8px;
 }
 
-#cartTable img {
-    height: 100%;
+.productImg {
+    height: 100px;
     width: auto;
 }
 
