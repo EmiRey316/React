@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 
 import { cartContext } from "../../context/cartContext";
 
@@ -57,7 +58,9 @@ const CartFull = ()=>{
                         <td><div><strong>Total a Pagar</strong></div></td>
                         <td><div><strong>{totalPayment}</strong></div></td>
                         <td><div className="buttonsCell">
-                            <button type="button" className="btn btn-success">Pagar</button>
+                            <Link to="/Checkout">
+                                <button type="button" className="btn btn-success">Pagar</button>
+                            </Link>
                         </div></td>
                     </tr>
 

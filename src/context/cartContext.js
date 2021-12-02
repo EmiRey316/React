@@ -37,6 +37,12 @@ const CartContextProvider = ({children})=>{
     const clearCart = ()=>{
         setCartList([])
     }
+
+
+    let totalPayment = 0;
+    cartList.forEach(item => {
+        totalPayment = totalPayment + (item.price * item.amount);
+    });
     
 
     return (
@@ -44,7 +50,8 @@ const CartContextProvider = ({children})=>{
             cartList,
             addToCart,
             deleteItem,
-            clearCart
+            clearCart,
+            totalPayment
         }}>
             { children }
         </cartContext.Provider>

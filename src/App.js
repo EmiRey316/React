@@ -6,9 +6,11 @@ import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetail/ItemDetailContainer';
 import CartView from './components/Cart/CartView';
+import Checkout from './components/Checkout/Checkout';
 import Footer from './components/Footer/Footer';
 
 import './App.css';
+
 
 
 function App() {
@@ -22,6 +24,7 @@ function App() {
           <Route path="/category/:categoryId" element={<ItemListContainer message="Listado de productos" />} />
           <Route path="/item/:id" element={<ItemDetailContainer />} />
           <Route path="/cart" element={<CartView />} />
+          <Route path="/checkout" element={<Checkout />} />
         </Routes>
 
         <Footer />
