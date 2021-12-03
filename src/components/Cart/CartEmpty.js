@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 
 const CartEmpty = ()=>{
-    return <div className="text-center">
+    return <div className="text-center mb-4">
         <h2>Carrito vacío</h2>
         <p>Agregue productos desde el catálogo para verlos aquí</p>
         <Link to="/">

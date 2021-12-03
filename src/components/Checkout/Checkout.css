@@ -21,3 +21,16 @@
 #buyerForm input {
     margin-bottom: 15px;
 }
+
+#successContainer {
+    background-color: rgb(230, 227, 227);
+    width: 90%;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#gifContainer {
+    width: 80%;
+    padding: 10px 0;
+}

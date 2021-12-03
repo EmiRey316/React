@@ -5,7 +5,7 @@ const ItemListContainer = ({message})=>{
     return (
         <div className="main text-center">
         
-            <h1>{message}</h1>
+            <h1 className="mb-4">{message}</h1>
 
             <ItemList/>
             

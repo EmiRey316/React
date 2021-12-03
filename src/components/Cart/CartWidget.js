@@ -15,7 +15,7 @@ const CartWidget = ()=>{
     });
 
     return (
-        <div className="container-fluid m-0 p-0 position-relative" data-bs-toggle="modal" data-bs-target="#cartModal">
+        <div className="container-fluid m-0 p-0 position-relative">
             <img src={cart} alt="Shopping Cart" />
             {totalAmount !== 0 && <span className="badge bg-secondary position-absolute top-100 start-100 translate-middle rounded-circle">{totalAmount}</span>}
         </div>

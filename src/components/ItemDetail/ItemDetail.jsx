@@ -11,7 +11,11 @@ const ItemDetail = ({product})=>{
     //Estado que verifica cual será el botón o componente a mostrar.
     const [onAddClicked, setOnAddClicked] = useState(false);
 
-    const { addToCart } = useContext(cartContext)
+    const { addToCart, amountInCart } = useContext(cartContext)
+
+
+    //Máximo para controlar que no se agreguen más item que el stock en el carrito.
+    const maximum = product.stock - amountInCart(product);
 
 
     //Función que se ejecutará al desatar el evento onClick del botón "Agregar al carrito" del ItemCount.
@@ -47,7 +51,7 @@ const ItemDetail = ({product})=>{
                     </Link>
                 </div>
             :
-                <ItemCount initial={0} stock={product.stock} onAdd={handleAdd}/>
+                <ItemCount initial={(product.stock === 0) || (maximum === 0) ? 0:1} maximum={maximum} onAdd={handleAdd}/>
             }
 
         </div>

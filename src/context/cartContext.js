@@ -25,6 +25,14 @@ const CartContextProvider = ({children})=>{
     }
 
 
+    const amountInCart = (item)=>{
+        if(isInCart(item)) {
+            return cartList.find(e => e.id === item.id).amount;
+        } else {
+            return 0;
+        }
+    }
+
 
     //Función un artículo concreto del carrito.
     const deleteItem = (itemId) => {
@@ -39,10 +47,7 @@ const CartContextProvider = ({children})=>{
     }
 
 
-    let totalPayment = 0;
-    cartList.forEach(item => {
-        totalPayment = totalPayment + (item.price * item.amount);
-    });
+    const totalPayment = cartList.reduce((count, item) => count + (item.price * item.amount), 0);
     
 
     return (
@@ -51,6 +56,7 @@ const CartContextProvider = ({children})=>{
             addToCart,
             deleteItem,
             clearCart,
+            amountInCart,
             totalPayment
         }}>
             { children }

@@ -10,16 +10,11 @@ import deleteIcon from "../../multimedia/delete.png";
 
 const CartFull = ()=>{
 
-    const { cartList, deleteItem, clearCart } = useContext(cartContext);
-
-    let totalPayment = 0;
-    cartList.forEach(item => {
-        totalPayment = totalPayment + (item.price * item.amount);
-    });
+    const { cartList, deleteItem, clearCart, totalPayment } = useContext(cartContext);
 
 
     return <div className="container">
-        <h1 className="text-center">Carrito de compras</h1>
+        <h1 className="text-center mb-4">Carrito de compras</h1>
         <span>
             <button className="btn btn-danger" onClick={clearCart}>Limpiar carrito</button>
         </span>
