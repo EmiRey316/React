@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+
 import successGif from "../../multimedia/success.gif";
 
 
@@ -10,9 +11,9 @@ const Success = ({orderId})=>{
         <div className="container-fluid mt-5">
             <h2 className="mb-4">Felicitaciones!!!</h2>
             <p>Tu compra se ha completado con éxito.</p>
-            <p>{"Número de orden: " + orderId}</p>
+            <p>Número de orden: {orderId ? orderId : ". . ."}</p>
             <Link to="/">
-                <button className="btn btn-secondary">Catálogo</button>
+                <button className="btn btn-secondary">Volver al inicio</button>
             </Link>
         </div>
     </div>

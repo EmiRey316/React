@@ -7,17 +7,11 @@ import deleteIcon from "../../multimedia/delete.png";
 
 
 
-
-const CartFull = ()=>{
-
+const CartWithItems = ()=>{
     const { cartList, deleteItem, clearCart, totalPayment } = useContext(cartContext);
 
-
     return <div className="container">
-        <h1 className="text-center mb-4">Carrito de compras</h1>
-        <span>
-            <button className="btn btn-danger" onClick={clearCart}>Limpiar carrito</button>
-        </span>
+        <h1 className="text-center mb-4">Carrito de compras</h1>      
 
         {/*Contenedor con la tabla que muestra el listado de productos en el carrito*/}
         <div className="table-responsive container-fluid">
@@ -37,7 +31,7 @@ const CartFull = ()=>{
                     {cartList.map(item => <tr key={"item" + item.id + "row"}>
                         <td><div>{item.amount}</div></td>
                         <td><div><img src={item.imageUrl} alt={item.description} className="productImg"></img></div></td>
-                        <td><div className="align-middle">{item.name}</div></td>
+                        <td><div>{item.name}</div></td>
                         <td><div>{item.price * item.amount}</div></td>
                         <td><div className="buttonsCell">
                             <button className="btn btn-danger" onClick={()=>deleteItem(item.id)}>
@@ -46,9 +40,11 @@ const CartFull = ()=>{
                         </div></td>
                     </tr>)}
 
-                    {/*Última fila de la tabla con el total a pagar y el botón para pagar*/}
+                    {/*Última fila de la tabla con el total a pagar, el botón para pagar y para limpiar el carrito*/}
                     <tr>
-                        <td></td>
+                        <td>
+                            <button className="btn btn-danger" onClick={clearCart}>Limpiar carrito</button>
+                        </td>
                         <td></td>
                         <td><div><strong>Total a Pagar</strong></div></td>
                         <td><div><strong>{totalPayment}</strong></div></td>
@@ -65,4 +61,5 @@ const CartFull = ()=>{
     </div>
 }
 
-export default CartFull;
+
+export default CartWithItems;

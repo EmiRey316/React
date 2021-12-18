@@ -1,7 +1,10 @@
-import './Footer.css';
 import instagramLogo from '../../multimedia/instagramLogo.png';
 import twitterLogo from '../../multimedia/twitterLogo.png';
 import facebookLogo from '../../multimedia/facebookLogo.png';
+
+import './Footer.css';
+
+
 
 const Footer = ()=>{
     return <footer>

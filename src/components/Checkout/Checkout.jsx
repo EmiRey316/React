@@ -4,12 +4,12 @@ import firebase from "firebase/compat/app";
 import "firebase/compat/firestore"
 import { getFirestore } from "../../service/getFirestore.js";
 
-import BuyerForm from "./BuyerForm";
 import Order from "./Order";
+import BuyerForm from "./BuyerForm";
 import CartEmpty from "../Cart/CartEmpty";
+import Success from "./Success";
 
 import "./Checkout.css"
-import Success from "./Success";
 
 
 
@@ -19,7 +19,7 @@ const Checkout = ()=>{
     const [orderId, setOrderId] = useState("")
 
 
-    //Función que genera la orden, la carga en Firestore y finaliza el proceso de compra.
+    //Función que genera la orden, la carga en Firestore y marca el final del proceso de compra.
     const generateOrder = (buyer)=>{
 
         const itemList = cartList.map(item => {
@@ -74,13 +74,12 @@ const Checkout = ()=>{
     }
 
 
-    //Función que se activa cuando se hace el Submit del form.
+    //Función que se activa cuando se hace el Submit del form y desata las otras funciones.
     const handleSuccess = (buyer)=>{
         generateOrder(buyer);
         updateStock();
         clearCart();
     }
-
 
 
     return <div>
@@ -95,18 +94,13 @@ const Checkout = ()=>{
             <div>
                 {/*Comprobación por si se entra a la ruta directamente */}
                 {cartList.length === 0 ?
-
                     <CartEmpty />
-
                 :
-
-                <div id="checkoutContainer">
-                    <Order cartList={cartList} />
-
-                    <BuyerForm onSuccess={handleSuccess} />
-                </div>
-
-            }
+                    <div id="checkoutContainer">
+                        <Order cartList={cartList} totalPayment={totalPayment} />
+                        <BuyerForm onSuccess={handleSuccess} />
+                    </div>
+                }
             </div>
             
         }

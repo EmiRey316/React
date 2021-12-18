@@ -25,6 +25,7 @@ const CartContextProvider = ({children})=>{
     }
 
 
+    //Función que devuelve la cantidad que hay en el carrito para un item en concreto.
     const amountInCart = (item)=>{
         if(isInCart(item)) {
             return cartList.find(e => e.id === item.id).amount;
@@ -47,6 +48,7 @@ const CartContextProvider = ({children})=>{
     }
 
 
+    //Función que calcula la suma total a pagar por los productos.
     const totalPayment = cartList.reduce((count, item) => count + (item.price * item.amount), 0);
     
 

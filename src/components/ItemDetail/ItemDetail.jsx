@@ -1,6 +1,6 @@
 import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
-import { cartContext } from "../../context/cartContext.js";
+import { cartContext } from "../../context/cartContext";
 
 import ItemCount from "./ItemCount.jsx";
 
@@ -10,13 +10,10 @@ import "./ItemDetail.css";
 const ItemDetail = ({product})=>{
     //Estado que verifica cual será el botón o componente a mostrar.
     const [onAddClicked, setOnAddClicked] = useState(false);
-
     const { addToCart, amountInCart } = useContext(cartContext)
-
 
     //Máximo para controlar que no se agreguen más item que el stock en el carrito.
     const maximum = product.stock - amountInCart(product);
-
 
     //Función que se ejecutará al desatar el evento onClick del botón "Agregar al carrito" del ItemCount.
     const handleAdd = (quantityToAdd) => {
@@ -33,7 +30,8 @@ const ItemDetail = ({product})=>{
 
         <div id="itemDetails">
             <h2>{product.name}</h2>
-            <p>{product.category}</p>
+            <p>{"Categoría: " + product.category}</p>
+            <p>{"Descripción: " + product.description}</p>
             <p>{"Color primario: " + product.color}</p>
             <p>{product.stock === 0 ? "Stock: Sin stock": "Stock: " + product.stock}</p>
             <p>{"Precio: USD " + product.price}</p>
@@ -57,5 +55,6 @@ const ItemDetail = ({product})=>{
         </div>
     </div>
 }
+
 
 export default ItemDetail;

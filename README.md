@@ -1,5 +1,18 @@
-Proyecto basado en una tienda online de productos del equipo de football americano Pittsburgh Steelers.
-Elegí esta idea para el proyecto ya que debía ser un e-commerce, y como no trabajo con ningún producto me pareció que estos tenían bastante para jugar.
-Los colores se corresponden con los del equipo, así como los enlaces externos, que llevan a las redes sociales oficiales.
-Lo que utilizo como extra es Bootstrap, la mayoría del estilo de la página está dada por esta librería.
-Tengo intalada la versión 9 de Firebase, por ello los imports son un poco distintos, debo importar desde firebase/compat.
+#Steelers Shop
+
+Proyecto de ecommerce para el curso de ReactJS de CoderHouse, basado en productos del equipo de football americano Pittsburgh Steelers.
+Los colores se corresponden con los del equipo, así como los enlaces externos, que llevan a las redes sociales oficiales del equipo.
+
+
+##Dependencias
+
+Utilizo las siguientes dependencias:
+
+| Dependencia      | Descripción                         | Versión |
+| ---------------- | ----------------------------------- | ------- |
+| ReactJS          | Librería del proyecto               | 17.0.2  |
+| React Router DOM | Para controlar la navegación        | 6.2.1   |
+| Firebase         | Base de datos a través de Firestore | 9.6.1   |
+| Bootstrap        | Estilos                             | 5.1.3   |
+| Animate.css      | Animaciones                         | 1.0.0   |
+

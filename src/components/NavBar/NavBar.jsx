@@ -22,7 +22,7 @@ const NavBar = ()=>{
                     <div className="collapse navbar-collapse justify-content-end me-3" id="navbarNav">
                         <ul className="navbar-nav row justify-content-end text-center" style={{width: "50%"}}>
                             <li className="nav-item col-3">
-                                <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categorías</a>
+                                <a className="nav-link dropdown-toggle text-black" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categorías</a>
                                 <ul id="categoriesDropdown" className="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <li><Link className="dropdown-item" to="/category/Jerseys">Jersey's</Link></li>
                                     <li><Link className="dropdown-item" to="/category/Ropa">Ropa</Link></li>
@@ -30,12 +30,12 @@ const NavBar = ()=>{
                                 </ul>
                             </li>
                             <li className="nav-item col-3">
-                                <a className="nav-link text-black">Ofertas!</a>
+                                <Link className="nav-link text-black" to="/discounts">Ofertas!</Link>
                             </li>
                             <li className="nav-item col-3">
                                 <a className="nav-link text-black">Compras</a>
                             </li>
-                            <li className="nav-item col-2">
+                            <li className="nav-item col-2 my-2">
                                 <Link to="/cart">
                                     <CartWidget />
                                 </Link>

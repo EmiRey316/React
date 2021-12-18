@@ -2,7 +2,7 @@ import { useContext } from "react";
 
 import { cartContext } from "../../context/cartContext";
 import CartEmpty from "./CartEmpty";
-import CartFull from "./CartFull";
+import CartWithItems from "./CartWhitItems";
 
 import "./Cart.css";
 
@@ -15,13 +15,9 @@ const CartView = ()=> {
     return (<div>
 
         {cartList.length === 0 ?
-
             <CartEmpty />
-
         :
-
-            <CartFull />
-
+            <CartWithItems />
         }
     </div>);
 }
